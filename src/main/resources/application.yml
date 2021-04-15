@@ -1,0 +1,13 @@
+micronaut:
+  application:
+    name: shippingCalculator
+
+grpc:
+  client:
+    plaintext: true
+    max-retry-attempts: 10
+  channels:
+    shipping:
+      address: 'localhost:50051'
+      plaintext: true
+      max-retry-attempts: 10

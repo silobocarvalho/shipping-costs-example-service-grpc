@@ -34,6 +34,7 @@ class ShippingCostsController(@Inject val grpcClient: ShippingCostsServiceGrpc.S
                 //if null, throw exception
                 val statusProto = StatusProto.fromThrowable(e)
                     ?: throw HttpStatusException(HttpStatus.FORBIDDEN, e.status.description)
+                //ErrorDetails from Proto file.
                 val moreDetails = statusProto.detailsList.get(0).unpack(ErrorDetails::class.java)
                 throw HttpStatusException(HttpStatus.FORBIDDEN, "${moreDetails.code}: ${moreDetails.message}")
             }

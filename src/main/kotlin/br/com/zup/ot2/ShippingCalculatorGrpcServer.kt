@@ -63,6 +63,8 @@ class ShippingCalculatorGrpcServer : ShippingCostsServiceGrpc.ShippingCostsServi
                 .withDescription(e.message) // sent to client
                 .withCause(e) //not sent to client : type of exception: java.lang.IllegalStateException
                 .asRuntimeException() )
+
+            //ErrorDetails can be thorow here using Proto file.
         }
 
 

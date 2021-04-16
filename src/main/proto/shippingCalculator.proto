@@ -13,6 +13,11 @@ service ShippingCostsService{
   rpc calculateShippingCosts(CalculateShippingCostsRequest) returns (CalculateShippingCostsResponse){}
 }
 
+message ErrorDetails{
+  int32 code = 1;
+  string message = 2;
+}
+
 message ShippingRequest{
   string name = 1;
 }
